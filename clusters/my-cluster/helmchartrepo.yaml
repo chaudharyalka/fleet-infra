@@ -5,4 +5,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  url: https://github.com/chaudharyalka/charts/tree/master
+  url: https://github.com/stefanprodan/podinfo/tree/master/charts/podinfo
