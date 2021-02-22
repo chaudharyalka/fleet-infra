@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: samplecasehelmchart
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  url: https://github.com/chaudharyalka/my-helm-chart/tree/master/helm-chart-release
+
