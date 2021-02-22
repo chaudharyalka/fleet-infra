@@ -1,0 +1,47 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: samplecasehelmrelease
+  namespace: flux-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: nginx
+      version: "5.0.0"
+      sourceRef:
+        kind: HelmRepository
+        name: samplecasehelmchart
+        namespace: flux-system
+      interval: 1m
+  values:
+    usePassword: true
+    image:
+      registry: docker.io
+      repository: bitnami/nginx
+      tag: 1.16.0-debian-9-r46
+    service:
+      type: LoadBalancer
+      port: 80
+      nodePorts:
+        http: ""
+      externalTrafficPolicy: Cluster
+    ingress:
+      enabled: false
+    livenessProbe:
+      httpGet:
+        path: /
+        port: http
+      initialDelaySeconds: 30
+      timeoutSeconds: 5
+      failureThreshold: 6
+    readinessProbe:
+      httpGet:
+        path: /
+        port: http
+      initialDelaySeconds: 5
+      timeoutSeconds: 3
+      periodSeconds: 5
+    metrics:
+      enabled: false
+
