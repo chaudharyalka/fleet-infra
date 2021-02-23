@@ -7,7 +7,7 @@ spec:
   interval: 3m
   chart:
     spec:
-      chart: nginx
+      chart: nginx-1
       version: "5.0.0"
       sourceRef:
         kind: HelmRepository
