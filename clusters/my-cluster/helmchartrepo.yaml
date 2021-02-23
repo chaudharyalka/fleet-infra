@@ -4,5 +4,5 @@ metadata:
   name: samplecasehelmchart
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 2m0s
   url: https://charts.bitnami.com/bitnami/
