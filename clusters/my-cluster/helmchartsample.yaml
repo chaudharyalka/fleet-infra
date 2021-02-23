@@ -2,12 +2,13 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmChart
 metadata:
   name: helmchartsample
-  namespace: default
+  namespace: flux-system
 spec:
   chart: nginx
   version: 5.0.0
   sourceRef:
     name: samplecasehelmchart
     kind: HelmRepository
+    namespace: flux-system
   interval: 5m
 
