@@ -6,5 +6,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  url: 702834246803.dkr.ecr.us-west-2.amazonaws.com/helm-oci/first/helm/v1/repo/
-
+  url: 702834246803.dkr.ecr.us-west-2.amazonaws.com/helm-oci/first/
